@@ -1,0 +1,131 @@
+
+hamza@DESKTOP-Hamzus MINGW64 ~
+$ cd Desktop/
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop (master)
+$ mkdir learn_git_again
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop (master)
+$ cd learn_git_again/
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ touch third.txt
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git init
+Initialized empty Git repository in C:/Users/hamza/Desktop/learn_git_again/.git/
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git add .
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m"first commit"
+[master (root-commit) 92d0f49] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 92d0f49344df2c71081e4eac52f50060771e894e (HEAD -> master)
+Author: hamzus2611 <hamza.gharsallah@isimg.tn>
+Date:   Wed Apr 14 18:42:00 2021 +0100
+
+    first commit
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ touch fourth.txt
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git add fourth.txt
+
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m"scnd commit"
+[master 9be7269] scnd commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git rm --cached third.txt
+rm 'third.txt'
+
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git add .
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m"removing third.txt"
+On branch master
+nothing to commit, working tree clean
+
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 9be7269499b3a4cca1f72b282dc846dd1422f210 (HEAD -> master)
+Author: hamzus2611 <hamza.gharsallah@isimg.tn>
+Date:   Wed Apr 14 18:43:57 2021 +0100
+
+    scnd commit
+
+commit 92d0f49344df2c71081e4eac52f50060771e894e
+Author: hamzus2611 <hamza.gharsallah@isimg.tn>
+Date:   Wed Apr 14 18:42:00 2021 +0100
+
+    first commit
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.pager cat
+
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global --list
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=hamzus2611
+user.email=hamza.gharsallah@isimg.tn
+core.pager=cat
+
+
+hamza@DESKTOP-Hamzus MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
